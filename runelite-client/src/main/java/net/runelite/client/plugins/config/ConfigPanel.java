@@ -24,6 +24,7 @@
  */
 package net.runelite.client.plugins.config;
 
+import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.primitives.Ints;
 import java.awt.BorderLayout;
@@ -40,11 +41,13 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -506,17 +509,24 @@ public class ConfigPanel extends PluginPanel
 				if (cid.getItem().hidden())
 				{
 					boolean show = false;
-					String unhideat = cid.getItem().unhide();
+					Iterable<String> unhideat = Splitter
+						.onPattern("\\|\\|")
+						.trimResults()
+						.split(cid.getItem().unhide());
 
 					for (ConfigItemDescriptor cid2 : cd.getItems())
 					{
-
-						if (cid2.getItem().keyName().equals(unhideat))
+						if (StreamSupport.stream(unhideat.spliterator(), false).anyMatch(cid2.getItem().keyName()::equals))
 						{
 							if (cid2.getType() == boolean.class)
 							{
 								show = Boolean.parseBoolean(configManager.getConfiguration(cd.getGroup().value(), cid2.getItem().keyName()));
 							}
+						}
+
+						if (show)
+						{
+							break;
 						}
 					}
 
@@ -847,7 +857,12 @@ public class ConfigPanel extends PluginPanel
 			{
 				if (cid2.getItem().hidden())
 				{
-					if (cid2.getItem().unhide().equals(cid.getItem().keyName()))
+					Iterable<String> unhideat = Splitter
+						.onPattern("\\|\\|")
+						.trimResults()
+						.split(cid2.getItem().unhide());
+
+					if (StreamSupport.stream(unhideat.spliterator(), false).anyMatch(cid.getItem().keyName()::equals))
 					{ // If another options visibility changes depending on the value of this checkbox, then render the entire menu again
 						openGroupConfigPanel(listItem, config, cd);
 						return;

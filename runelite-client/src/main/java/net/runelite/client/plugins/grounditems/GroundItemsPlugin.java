@@ -105,7 +105,7 @@ public class GroundItemsPlugin extends Plugin
 
 	// items stay on the ground for 30 mins in an instance
 	private static final int INSTANCE_DURATION_MILLIS = 45 * 60 * 1000;
-	private static final int INSTANCE_DURATION_TICKS = (int) floor(30 * 60 / 0.6);
+	private static final int INSTANCE_DURATION_TICKS = (int) floor(45 * 60 / 0.6);
 	//untradeables stay on the ground for 150 seconds (http://oldschoolrunescape.wikia.com/wiki/Item#Dropping_and_Destroying)
 	private static final int UNTRADEABLE_DURATION_MILLIS = 150 * 1000;
 	private static final int UNTRADEABLE_DURATION_TICKS = (int) floor(150 / 0.6);

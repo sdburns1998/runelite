@@ -710,25 +710,26 @@ public final class Sprite extends Rasterizer2D {
    }
 
    @ObfuscatedName("ay")
-   public void method315(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int[] var9, int[] var10) {
+   @Export("drawRotatedAndAlphaMapped")
+   public void drawRotatedAndAlphaMapped(int x, int y, int width, int height, int xOffset, int yOffset, int rotation, int zoom, int[] xOffsets, int[] yOffsets) {
       try {
-         int var11 = -var3 / 2;
-         int var12 = -var4 / 2;
-         int var13 = (int)(Math.sin((double)var7 / 326.11D) * 65536.0D);
-         int var14 = (int)(Math.cos((double)var7 / 326.11D) * 65536.0D);
-         var13 = var13 * var8 >> 8;
-         var14 = var14 * var8 >> 8;
-         int var15 = var12 * var13 + var11 * var14 + (var5 << 16);
-         int var16 = var12 * var14 - var11 * var13 + (var6 << 16);
-         int var17 = var1 + var2 * Rasterizer2D.Rasterizer2D_width;
+         int var11 = -width / 2;
+         int var12 = -height / 2;
+         int var13 = (int)(Math.sin((double)rotation / 326.11D) * 65536.0D);
+         int var14 = (int)(Math.cos((double)rotation / 326.11D) * 65536.0D);
+         var13 = var13 * zoom >> 8;
+         var14 = var14 * zoom >> 8;
+         int var15 = var12 * var13 + var11 * var14 + (xOffset << 16);
+         int var16 = var12 * var14 - var11 * var13 + (yOffset << 16);
+         int var17 = x + y * Rasterizer2D.Rasterizer2D_width;
 
-         for (var2 = 0; var2 < var4; ++var2) {
-            int var18 = var9[var2];
+         for (y = 0; y < height; ++y) {
+            int var18 = xOffsets[y];
             int var19 = var17 + var18;
             int var20 = var15 + var14 * var18;
             int var21 = var16 - var13 * var18;
 
-            for (var1 = -var10[var2]; var1 < 0; ++var1) {
+            for (x = -yOffsets[y]; x < 0; ++x) {
                Rasterizer2D.Rasterizer2D_pixels[var19++] = this.pixels[this.subWidth * (var21 >> 16) + (var20 >> 16)];
                var20 += var14;
                var21 -= var13;

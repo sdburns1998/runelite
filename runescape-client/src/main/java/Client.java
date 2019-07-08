@@ -1404,18 +1404,18 @@ public final class Client extends GameShell implements Usernamed {
                var3 = true;
 
                int var5;
-               int var6;
+               int z;
                for (var4 = 0; var4 < class40.regionLandArchives.length; ++var4) {
                   byte[] var7 = HealthBarUpdate.regionMapArchives[var4];
                   if (var7 != null) {
                      var5 = (class308.regions[var4] >> 8) * 64 - class50.baseX;
-                     var6 = (class308.regions[var4] & 255) * 64 - GraphicsObject.baseY;
+                     z = (class308.regions[var4] & 255) * 64 - GraphicsObject.baseY;
                      if (isInInstance) {
                         var5 = 10;
-                        var6 = 10;
+                        z = 10;
                      }
 
-                     var3 &= TextureProvider.method2774(var7, var5, var6);
+                     var3 &= TextureProvider.method2774(var7, var5, z);
                   }
                }
 
@@ -1463,13 +1463,13 @@ public final class Client extends GameShell implements Usernamed {
                   int var9;
                   int var10;
                   int var11;
-                  int var12;
+                  int x;
                   int var13;
                   int var14;
                   int var15;
                   int var16;
                   int var17;
-                  int var18;
+                  int y;
                   int var19;
                   int var20;
                   int var21;
@@ -1477,21 +1477,21 @@ public final class Client extends GameShell implements Usernamed {
                      byte[] var22;
                      for (var56 = 0; var56 < var4; ++var56) {
                         var5 = (class308.regions[var56] >> 8) * 64 - class50.baseX;
-                        var6 = (class308.regions[var56] & 255) * 64 - GraphicsObject.baseY;
+                        z = (class308.regions[var56] & 255) * 64 - GraphicsObject.baseY;
                         var22 = class40.regionLandArchives[var56];
                         if (var22 != null) {
                            class13.playPcmPlayers();
-                           Varcs.method2166(var22, var5, var6, GameObject.field359 * 8 - 48, WorldMapLabelSize.field1041 * 8 - 48, collisionMaps);
+                           Varcs.method2166(var22, var5, z, GameObject.field359 * 8 - 48, WorldMapLabelSize.field1041 * 8 - 48, collisionMaps);
                         }
                      }
 
                      for (var56 = 0; var56 < var4; ++var56) {
                         var5 = (class308.regions[var56] >> 8) * 64 - class50.baseX;
-                        var6 = (class308.regions[var56] & 255) * 64 - GraphicsObject.baseY;
+                        z = (class308.regions[var56] & 255) * 64 - GraphicsObject.baseY;
                         var22 = class40.regionLandArchives[var56];
                         if (var22 == null && WorldMapLabelSize.field1041 < 800) {
                            class13.playPcmPlayers();
-                           UserComparator6.method3390(var5, var6, 64, 64);
+                           UserComparator6.method3390(var5, z, 64, 64);
                         }
                      }
 
@@ -1500,7 +1500,7 @@ public final class Client extends GameShell implements Usernamed {
                      for (var56 = 0; var56 < var4; ++var56) {
                         byte[] var23 = HealthBarUpdate.regionMapArchives[var56];
                         if (var23 != null) {
-                           var6 = (class308.regions[var56] >> 8) * 64 - class50.baseX;
+                           z = (class308.regions[var56] >> 8) * 64 - class50.baseX;
                            var21 = (class308.regions[var56] & 255) * 64 - GraphicsObject.baseY;
                            class13.playPcmPlayers();
                            Scene var24 = class65.scene;
@@ -1524,17 +1524,17 @@ public final class Client extends GameShell implements Usernamed {
                                  }
 
                                  var10 += var11 - 1;
-                                 var12 = var10 & 63;
+                                 x = var10 & 63;
                                  var13 = var10 >> 6 & 63;
                                  var14 = var10 >> 12;
                                  var15 = var26.readUnsignedByte();
                                  var16 = var15 >> 2;
                                  var17 = var15 & 3;
-                                 var18 = var6 + var13;
-                                 var19 = var12 + var21;
-                                 if (var18 > 0 && var19 > 0 && var18 < 103 && var19 < 103) {
+                                 y = z + var13;
+                                 var19 = x + var21;
+                                 if (y > 0 && var19 > 0 && y < 103 && var19 < 103) {
                                     var20 = var14;
-                                    if ((Tiles.Tiles_renderFlags[1][var18][var19] & 2) == 2) {
+                                    if ((Tiles.Tiles_renderFlags[1][y][var19] & 2) == 2) {
                                        var20 = var14 - 1;
                                     }
 
@@ -1543,7 +1543,7 @@ public final class Client extends GameShell implements Usernamed {
                                        var27 = var25[var20];
                                     }
 
-                                    class227.method4446(var14, var18, var19, var8, var17, var16, var24, var27);
+                                    class227.method4446(var14, y, var19, var8, var17, var16, var24, var27);
                                  }
                               }
                            }
@@ -1562,8 +1562,8 @@ public final class Client extends GameShell implements Usernamed {
                         if (var56 >= 4) {
                            for (var56 = 0; var56 < 13; ++var56) {
                               for (var5 = 0; var5 < 13; ++var5) {
-                                 var6 = instanceChunkTemplates[0][var56][var5];
-                                 if (var6 == -1) {
+                                 z = instanceChunkTemplates[0][var56][var5];
+                                 if (z == -1) {
                                     UserComparator6.method3390(var56 * 8, var5 * 8, 8, 8);
                                  }
                               }
@@ -1580,8 +1580,8 @@ public final class Client extends GameShell implements Usernamed {
                               class13.playPcmPlayers();
 
                               for (var5 = 0; var5 < 13; ++var5) {
-                                 for (var6 = 0; var6 < 13; ++var6) {
-                                    var21 = instanceChunkTemplates[var56][var5][var6];
+                                 for (z = 0; z < 13; ++z) {
+                                    var21 = instanceChunkTemplates[var56][var5][z];
                                     if (var21 != -1) {
                                        var57 = var21 >> 24 & 3;
                                        var58 = var21 >> 1 & 3;
@@ -1591,7 +1591,7 @@ public final class Client extends GameShell implements Usernamed {
 
                                        for (var10 = 0; var10 < class308.regions.length; ++var10) {
                                           if (class308.regions[var10] == var9 && HealthBarUpdate.regionMapArchives[var10] != null) {
-                                             ServerPacket.method3662(HealthBarUpdate.regionMapArchives[var10], var56, var5 * 8, var6 * 8, var57, (var59 & 7) * 8, (var8 & 7) * 8, var58, class65.scene, collisionMaps);
+                                             ServerPacket.method3662(HealthBarUpdate.regionMapArchives[var10], var56, var5 * 8, z * 8, var57, (var59 & 7) * 8, (var8 & 7) * 8, var58, class65.scene, collisionMaps);
                                              break;
                                           }
                                        }
@@ -1606,9 +1606,9 @@ public final class Client extends GameShell implements Usernamed {
                         class13.playPcmPlayers();
 
                         for (var5 = 0; var5 < 13; ++var5) {
-                           for (var6 = 0; var6 < 13; ++var6) {
+                           for (z = 0; z < 13; ++z) {
                               boolean var60 = false;
-                              var57 = instanceChunkTemplates[var56][var5][var6];
+                              var57 = instanceChunkTemplates[var56][var5][z];
                               if (var57 != -1) {
                                  var58 = var57 >> 24 & 3;
                                  var59 = var57 >> 1 & 3;
@@ -1618,7 +1618,7 @@ public final class Client extends GameShell implements Usernamed {
 
                                  for (var11 = 0; var11 < class308.regions.length; ++var11) {
                                     if (class308.regions[var11] == var10 && class40.regionLandArchives[var11] != null) {
-                                       class204.method4013(class40.regionLandArchives[var11], var56, var5 * 8, var6 * 8, var58, (var8 & 7) * 8, (var9 & 7) * 8, var59, collisionMaps);
+                                       class204.method4013(class40.regionLandArchives[var11], var56, var5 * 8, z * 8, var58, (var8 & 7) * 8, (var9 & 7) * 8, var59, collisionMaps);
                                        var60 = true;
                                        break;
                                     }
@@ -1628,7 +1628,7 @@ public final class Client extends GameShell implements Usernamed {
                               if (!var60) {
                                  var58 = var56;
                                  var59 = var5 * 8;
-                                 var8 = var6 * 8;
+                                 var8 = z * 8;
 
                                  for (var9 = 0; var9 < 8; ++var9) {
                                     for (var10 = 0; var10 < 8; ++var10) {
@@ -1668,13 +1668,13 @@ public final class Client extends GameShell implements Usernamed {
                   Scene var61 = class65.scene;
                   CollisionMap[] var62 = collisionMaps;
 
-                  for (var6 = 0; var6 < 4; ++var6) {
+                  for (z = 0; z < 4; ++z) {
                      for (var21 = 0; var21 < 104; ++var21) {
                         for (var57 = 0; var57 < 104; ++var57) {
-                           if ((Tiles.Tiles_renderFlags[var6][var21][var57] & 1) == 1) {
-                              var58 = var6;
+                           if ((Tiles.Tiles_renderFlags[z][var21][var57] & 1) == 1) {
+                              var58 = z;
                               if ((Tiles.Tiles_renderFlags[1][var21][var57] & 2) == 2) {
-                                 var58 = var6 - 1;
+                                 var58 = z - 1;
                               }
 
                               if (var58 >= 0) {
@@ -1704,41 +1704,41 @@ public final class Client extends GameShell implements Usernamed {
                   }
 
                   int[] var63;
-                  for (var6 = 0; var6 < 4; ++var6) {
-                     byte[][] var28 = Tiles.field909[var6];
+                  for (z = 0; z < 4; ++z) {
+                     byte[][] var28 = Tiles.field909[z];
                      var10 = (int)Math.sqrt(5100.0D);
                      var11 = var10 * 768 >> 8;
 
                      int var29;
-                     for (var12 = 1; var12 < 103; ++var12) {
+                     for (x = 1; x < 103; ++x) {
                         for (var13 = 1; var13 < 103; ++var13) {
-                           var14 = Tiles.Tiles_heights[var6][var13 + 1][var12] - Tiles.Tiles_heights[var6][var13 - 1][var12];
-                           var15 = Tiles.Tiles_heights[var6][var13][var12 + 1] - Tiles.Tiles_heights[var6][var13][var12 - 1];
+                           var14 = Tiles.Tiles_heights[z][var13 + 1][x] - Tiles.Tiles_heights[z][var13 - 1][x];
+                           var15 = Tiles.Tiles_heights[z][var13][x + 1] - Tiles.Tiles_heights[z][var13][x - 1];
                            var16 = (int)Math.sqrt((double)(var15 * var15 + var14 * var14 + 65536));
                            var17 = (var14 << 8) / var16;
-                           var18 = 65536 / var16;
+                           y = 65536 / var16;
                            var19 = (var15 << 8) / var16;
-                           var20 = (var19 * -50 + var17 * -50 + var18 * -10) / var11 + 96;
-                           var29 = (var28[var13 - 1][var12] >> 2) + (var28[var13][var12 - 1] >> 2) + (var28[var13 + 1][var12] >> 3) + (var28[var13][var12 + 1] >> 3) + (var28[var13][var12] >> 1);
-                           Huffman.field398[var13][var12] = var20 - var29;
+                           var20 = (var19 * -50 + var17 * -50 + y * -10) / var11 + 96;
+                           var29 = (var28[var13 - 1][x] >> 2) + (var28[var13][x - 1] >> 2) + (var28[var13 + 1][x] >> 3) + (var28[var13][x + 1] >> 3) + (var28[var13][x] >> 1);
+                           Huffman.field398[var13][x] = var20 - var29;
                         }
                      }
 
-                     for (var12 = 0; var12 < 104; ++var12) {
-                        class13.field1112[var12] = 0;
-                        Formatting.field353[var12] = 0;
-                        class214.field1131[var12] = 0;
-                        WorldMapSectionType.field1104[var12] = 0;
-                        Message.field490[var12] = 0;
+                     for (x = 0; x < 104; ++x) {
+                        class13.field1112[x] = 0;
+                        Formatting.field353[x] = 0;
+                        class214.field1131[x] = 0;
+                        WorldMapSectionType.field1104[x] = 0;
+                        Message.field490[x] = 0;
                      }
 
-                     for (var12 = -5; var12 < 109; ++var12) {
+                     for (x = -5; x < 109; ++x) {
                         for (var13 = 0; var13 < 104; ++var13) {
-                           var14 = var12 + 5;
+                           var14 = x + 5;
                            int var10003;
                            FloorUnderlayDefinition var31;
                            if (var14 >= 0 && var14 < 104) {
-                              var15 = Tiles.field908[var6][var14][var13] & 255;
+                              var15 = Tiles.field908[z][var14][var13] & 255;
                               if (var15 > 0) {
                                  var31 = StudioGame.method4550(var15 - 1);
                                  var63 = class13.field1112;
@@ -1753,9 +1753,9 @@ public final class Client extends GameShell implements Usernamed {
                               }
                            }
 
-                           var15 = var12 - 5;
+                           var15 = x - 5;
                            if (var15 >= 0 && var15 < 104) {
-                              var16 = Tiles.field908[var6][var15][var13] & 255;
+                              var16 = Tiles.field908[z][var15][var13] & 255;
                               if (var16 > 0) {
                                  var31 = StudioGame.method4550(var16 - 1);
                                  var63 = class13.field1112;
@@ -1771,15 +1771,15 @@ public final class Client extends GameShell implements Usernamed {
                            }
                         }
 
-                        if (var12 >= 1 && var12 < 103) {
+                        if (x >= 1 && x < 103) {
                            var13 = 0;
                            var14 = 0;
                            var15 = 0;
                            var16 = 0;
                            var17 = 0;
 
-                           for (var18 = -5; var18 < 109; ++var18) {
-                              var19 = var18 + 5;
+                           for (y = -5; y < 109; ++y) {
+                              var19 = y + 5;
                               if (var19 >= 0 && var19 < 104) {
                                  var13 += class13.field1112[var19];
                                  var14 += Formatting.field353[var19];
@@ -1788,7 +1788,7 @@ public final class Client extends GameShell implements Usernamed {
                                  var17 += Message.field490[var19];
                               }
 
-                              var20 = var18 - 5;
+                              var20 = y - 5;
                               if (var20 >= 0 && var20 < 104) {
                                  var13 -= class13.field1112[var20];
                                  var14 -= Formatting.field353[var20];
@@ -1797,33 +1797,33 @@ public final class Client extends GameShell implements Usernamed {
                                  var17 -= Message.field490[var20];
                               }
 
-                              if (var18 >= 1 && var18 < 103 && (!isLowDetail || (Tiles.Tiles_renderFlags[0][var12][var18] & 2) != 0 || (Tiles.Tiles_renderFlags[var6][var12][var18] & 16) == 0)) {
-                                 if (var6 < Tiles.Tiles_minPlane) {
-                                    Tiles.Tiles_minPlane = var6;
+                              if (y >= 1 && y < 103 && (!isLowDetail || (Tiles.Tiles_renderFlags[0][x][y] & 2) != 0 || (Tiles.Tiles_renderFlags[z][x][y] & 16) == 0)) {
+                                 if (z < Tiles.Tiles_minPlane) {
+                                    Tiles.Tiles_minPlane = z;
                                  }
 
-                                 var29 = Tiles.field908[var6][var12][var18] & 255;
-                                 int var30 = Fonts.field350[var6][var12][var18] & 255;
+                                 var29 = Tiles.field908[z][x][y] & 255;
+                                 int var30 = Fonts.field350[z][x][y] & 255;
                                  if (var29 > 0 || var30 > 0) {
-                                    int var66 = Tiles.Tiles_heights[var6][var12][var18];
-                                    int var32 = Tiles.Tiles_heights[var6][var12 + 1][var18];
-                                    int var33 = Tiles.Tiles_heights[var6][var12 + 1][var18 + 1];
-                                    int var34 = Tiles.Tiles_heights[var6][var12][var18 + 1];
-                                    int var35 = Huffman.field398[var12][var18];
-                                    int var36 = Huffman.field398[var12 + 1][var18];
-                                    int var37 = Huffman.field398[var12 + 1][var18 + 1];
-                                    int var38 = Huffman.field398[var12][var18 + 1];
+                                    int heightSw = Tiles.Tiles_heights[z][x][y];
+                                    int heightNw = Tiles.Tiles_heights[z][x + 1][y];
+                                    int heightNe = Tiles.Tiles_heights[z][x + 1][y + 1];
+                                    int heightSe = Tiles.Tiles_heights[z][x][y + 1];
+                                    int var35 = Huffman.field398[x][y];
+                                    int var36 = Huffman.field398[x + 1][y];
+                                    int var37 = Huffman.field398[x + 1][y + 1];
+                                    int var38 = Huffman.field398[x][y + 1];
                                     int var39 = -1;
                                     int var40 = -1;
-                                    int var41;
-                                    int var42;
+                                    int underlayRgb;
+                                    int shape;
                                     int var43;
                                     if (var29 > 0) {
-                                       var41 = var13 * 256 / var16;
-                                       var42 = var14 / var17;
+                                       underlayRgb = var13 * 256 / var16;
+                                       shape = var14 / var17;
                                        var43 = var15 / var17;
-                                       var39 = WorldMapAreaData.method712(var41, var42, var43);
-                                       var41 = var41 + Tiles.field917 & 255;
+                                       var39 = WorldMapAreaData.method712(underlayRgb, shape, var43);
+                                       underlayRgb = underlayRgb + Tiles.field917 & 255;
                                        var43 += Tiles.field918;
                                        if (var43 < 0) {
                                           var43 = 0;
@@ -1831,13 +1831,13 @@ public final class Client extends GameShell implements Usernamed {
                                           var43 = 255;
                                        }
 
-                                       var40 = WorldMapAreaData.method712(var41, var42, var43);
+                                       var40 = WorldMapAreaData.method712(underlayRgb, shape, var43);
                                     }
 
                                     FloorOverlayDefinition var44;
-                                    if (var6 > 0) {
+                                    if (z > 0) {
                                        boolean var45 = true;
-                                       if (var29 == 0 && class32.field1157[var6][var12][var18] != 0) {
+                                       if (var29 == 0 && class32.field1157[z][x][y] != 0) {
                                           var45 = false;
                                        }
 
@@ -1864,22 +1864,22 @@ public final class Client extends GameShell implements Usernamed {
                                           }
                                        }
 
-                                       if (var45 && var66 == var32 && var66 == var33 && var34 == var66) {
-                                          var63 = Tiles.field910[var6][var12];
-                                          var63[var18] |= 2340;
+                                       if (var45 && heightSw == heightNw && heightSw == heightNe && heightSe == heightSw) {
+                                          var63 = Tiles.field910[z][x];
+                                          var63[y] |= 2340;
                                        }
                                     }
 
-                                    var41 = 0;
+                                    underlayRgb = 0;
                                     if (var40 != -1) {
-                                       var41 = Rasterizer3D.Rasterizer3D_colorPalette[class15.method183(var40, 96)];
+                                       underlayRgb = Rasterizer3D.Rasterizer3D_colorPalette[class15.method183(var40, 96)];
                                     }
 
                                     if (var30 == 0) {
-                                       var61.addTile(var6, var12, var18, 0, 0, -1, var66, var32, var33, var34, class15.method183(var39, var35), class15.method183(var39, var36), class15.method183(var39, var37), class15.method183(var39, var38), 0, 0, 0, 0, var41, 0);
+                                       var61.addTile(z, x, y, 0, 0, -1, heightSw, heightNw, heightNe, heightSe, class15.method183(var39, var35), class15.method183(var39, var36), class15.method183(var39, var37), class15.method183(var39, var38), 0, 0, 0, 0, underlayRgb, 0);
                                     } else {
-                                       var42 = class32.field1157[var6][var12][var18] + 1;
-                                       byte var67 = class307.field1155[var6][var12][var18];
+                                       shape = class32.field1157[z][x][y] + 1;
+                                       byte rotation = class307.field1155[z][x][y];
                                        int var68 = var30 - 1;
                                        FloorOverlayDefinition var69 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var68);
                                        if (var69 != null) {
@@ -1896,21 +1896,21 @@ public final class Client extends GameShell implements Usernamed {
                                           var44 = var69;
                                        }
 
-                                       int var70 = var44.texture;
+                                       int texture = var44.texture;
                                        int var49;
                                        int var50;
-                                       int var51;
+                                       int overlayRgb;
                                        int var52;
-                                       if (var70 >= 0) {
-                                          var50 = Rasterizer3D.Rasterizer3D_textureLoader.getAverageTextureRGB(var70);
+                                       if (texture >= 0) {
+                                          var50 = Rasterizer3D.Rasterizer3D_textureLoader.getAverageTextureRGB(texture);
                                           var49 = -1;
                                        } else if (var44.rgb == 16711935) {
                                           var49 = -2;
-                                          var70 = -1;
+                                          texture = -1;
                                           var50 = -2;
                                        } else {
                                           var49 = WorldMapAreaData.method712(var44.hue, var44.saturation, var44.lightness);
-                                          var51 = var44.hue + Tiles.field917 & 255;
+                                          overlayRgb = var44.hue + Tiles.field917 & 255;
                                           var52 = var44.lightness + Tiles.field918;
                                           if (var52 < 0) {
                                              var52 = 0;
@@ -1918,12 +1918,12 @@ public final class Client extends GameShell implements Usernamed {
                                              var52 = 255;
                                           }
 
-                                          var50 = WorldMapAreaData.method712(var51, var44.saturation, var52);
+                                          var50 = WorldMapAreaData.method712(overlayRgb, var44.saturation, var52);
                                        }
 
-                                       var51 = 0;
+                                       overlayRgb = 0;
                                        if (var50 != -2) {
-                                          var51 = Rasterizer3D.Rasterizer3D_colorPalette[WorldMapDecoration.method348(var50, 96)];
+                                          overlayRgb = Rasterizer3D.Rasterizer3D_colorPalette[WorldMapDecoration.method348(var50, 96)];
                                        }
 
                                        if (var44.rgb2 != -1) {
@@ -1936,10 +1936,10 @@ public final class Client extends GameShell implements Usernamed {
                                           }
 
                                           var50 = WorldMapAreaData.method712(var52, var44.saturation2, var53);
-                                          var51 = Rasterizer3D.Rasterizer3D_colorPalette[WorldMapDecoration.method348(var50, 96)];
+                                          overlayRgb = Rasterizer3D.Rasterizer3D_colorPalette[WorldMapDecoration.method348(var50, 96)];
                                        }
 
-                                       var61.addTile(var6, var12, var18, var42, var67, var70, var66, var32, var33, var34, class15.method183(var39, var35), class15.method183(var39, var36), class15.method183(var39, var37), class15.method183(var39, var38), WorldMapDecoration.method348(var49, var35), WorldMapDecoration.method348(var49, var36), WorldMapDecoration.method348(var49, var37), WorldMapDecoration.method348(var49, var38), var41, var51);
+                                       var61.addTile(z, x, y, shape, rotation, texture, heightSw, heightNw, heightNe, heightSe, class15.method183(var39, var35), class15.method183(var39, var36), class15.method183(var39, var37), class15.method183(var39, var38), WorldMapDecoration.method348(var49, var35), WorldMapDecoration.method348(var49, var36), WorldMapDecoration.method348(var49, var37), WorldMapDecoration.method348(var49, var38), underlayRgb, overlayRgb);
                                     }
                                  }
                               }
@@ -1947,44 +1947,44 @@ public final class Client extends GameShell implements Usernamed {
                         }
                      }
 
-                     for (var12 = 1; var12 < 103; ++var12) {
+                     for (x = 1; x < 103; ++x) {
                         for (var13 = 1; var13 < 103; ++var13) {
-                           if ((Tiles.Tiles_renderFlags[var6][var13][var12] & 8) != 0) {
-                              var18 = 0;
-                           } else if (var6 > 0 && (Tiles.Tiles_renderFlags[1][var13][var12] & 2) != 0) {
-                              var18 = var6 - 1;
+                           if ((Tiles.Tiles_renderFlags[z][var13][x] & 8) != 0) {
+                              y = 0;
+                           } else if (z > 0 && (Tiles.Tiles_renderFlags[1][var13][x] & 2) != 0) {
+                              y = z - 1;
                            } else {
-                              var18 = var6;
+                              y = z;
                            }
 
-                           var61.setTileMinPlane(var6, var13, var12, var18);
+                           var61.setTileMinPlane(z, var13, x, y);
                         }
                      }
 
-                     Tiles.field908[var6] = ((byte[][])null);
-                     Fonts.field350[var6] = ((byte[][])null);
-                     class32.field1157[var6] = ((byte[][])null);
-                     class307.field1155[var6] = ((byte[][])null);
-                     Tiles.field909[var6] = ((byte[][])null);
+                     Tiles.field908[z] = ((byte[][])null);
+                     Fonts.field350[z] = ((byte[][])null);
+                     class32.field1157[z] = ((byte[][])null);
+                     class307.field1155[z] = ((byte[][])null);
+                     Tiles.field909[z] = ((byte[][])null);
                   }
 
                   var61.method293(-50, -10, -50);
 
-                  for (var6 = 0; var6 < 104; ++var6) {
+                  for (z = 0; z < 104; ++z) {
                      for (var21 = 0; var21 < 104; ++var21) {
-                        if ((Tiles.Tiles_renderFlags[1][var6][var21] & 2) == 2) {
-                           var61.setLinkBelow(var6, var21);
+                        if ((Tiles.Tiles_renderFlags[1][z][var21] & 2) == 2) {
+                           var61.setLinkBelow(z, var21);
                         }
                      }
                   }
 
-                  var6 = 1;
+                  z = 1;
                   var21 = 2;
                   var57 = 4;
 
                   for (var58 = 0; var58 < 4; ++var58) {
                      if (var58 > 0) {
-                        var6 <<= 3;
+                        z <<= 3;
                         var21 <<= 3;
                         var57 <<= 3;
                      }
@@ -1993,33 +1993,33 @@ public final class Client extends GameShell implements Usernamed {
                         for (var8 = 0; var8 <= 104; ++var8) {
                            for (var9 = 0; var9 <= 104; ++var9) {
                               short var64;
-                              if ((Tiles.field910[var59][var9][var8] & var6) != 0) {
+                              if ((Tiles.field910[var59][var9][var8] & z) != 0) {
                                  var10 = var8;
                                  var11 = var8;
-                                 var12 = var59;
+                                 x = var59;
 
-                                 for (var13 = var59; var10 > 0 && (Tiles.field910[var59][var9][var10 - 1] & var6) != 0; --var10) {
+                                 for (var13 = var59; var10 > 0 && (Tiles.field910[var59][var9][var10 - 1] & z) != 0; --var10) {
                                  }
 
-                                 while (var11 < 104 && (Tiles.field910[var59][var9][var11 + 1] & var6) != 0) {
+                                 while (var11 < 104 && (Tiles.field910[var59][var9][var11 + 1] & z) != 0) {
                                     ++var11;
                                  }
 
                                  label649:
-                                 while (var12 > 0) {
+                                 while (x > 0) {
                                     for (var14 = var10; var14 <= var11; ++var14) {
-                                       if ((Tiles.field910[var12 - 1][var9][var14] & var6) == 0) {
+                                       if ((Tiles.field910[x - 1][var9][var14] & z) == 0) {
                                           break label649;
                                        }
                                     }
 
-                                    --var12;
+                                    --x;
                                  }
 
                                  label638:
                                  while (var13 < var58) {
                                     for (var14 = var10; var14 <= var11; ++var14) {
-                                       if ((Tiles.field910[var13 + 1][var9][var14] & var6) == 0) {
+                                       if ((Tiles.field910[var13 + 1][var9][var14] & z) == 0) {
                                           break label638;
                                        }
                                     }
@@ -2027,17 +2027,17 @@ public final class Client extends GameShell implements Usernamed {
                                     ++var13;
                                  }
 
-                                 var14 = (var11 - var10 + 1) * (var13 + 1 - var12);
+                                 var14 = (var11 - var10 + 1) * (var13 + 1 - x);
                                  if (var14 >= 8) {
                                     var64 = 240;
                                     var16 = Tiles.Tiles_heights[var13][var9][var10] - var64;
-                                    var17 = Tiles.Tiles_heights[var12][var9][var10];
+                                    var17 = Tiles.Tiles_heights[x][var9][var10];
                                     Scene.Scene_addOccluder(var58, 1, var9 * 128, var9 * 128, var10 * 128, var11 * 128 + 128, var16, var17);
 
-                                    for (var18 = var12; var18 <= var13; ++var18) {
+                                    for (y = x; y <= var13; ++y) {
                                        for (var19 = var10; var19 <= var11; ++var19) {
-                                          var63 = Tiles.field910[var18][var9];
-                                          var63[var19] &= ~var6;
+                                          var63 = Tiles.field910[y][var9];
+                                          var63[var19] &= ~z;
                                        }
                                     }
                                  }
@@ -2046,7 +2046,7 @@ public final class Client extends GameShell implements Usernamed {
                               if ((Tiles.field910[var59][var9][var8] & var21) != 0) {
                                  var10 = var9;
                                  var11 = var9;
-                                 var12 = var59;
+                                 x = var59;
 
                                  for (var13 = var59; var10 > 0 && (Tiles.field910[var59][var10 - 1][var8] & var21) != 0; --var10) {
                                  }
@@ -2056,14 +2056,14 @@ public final class Client extends GameShell implements Usernamed {
                                  }
 
                                  label702:
-                                 while (var12 > 0) {
+                                 while (x > 0) {
                                     for (var14 = var10; var14 <= var11; ++var14) {
-                                       if ((Tiles.field910[var12 - 1][var14][var8] & var21) == 0) {
+                                       if ((Tiles.field910[x - 1][var14][var8] & var21) == 0) {
                                           break label702;
                                        }
                                     }
 
-                                    --var12;
+                                    --x;
                                  }
 
                                  label691:
@@ -2077,16 +2077,16 @@ public final class Client extends GameShell implements Usernamed {
                                     ++var13;
                                  }
 
-                                 var14 = (var11 - var10 + 1) * (var13 + 1 - var12);
+                                 var14 = (var11 - var10 + 1) * (var13 + 1 - x);
                                  if (var14 >= 8) {
                                     var64 = 240;
                                     var16 = Tiles.Tiles_heights[var13][var10][var8] - var64;
-                                    var17 = Tiles.Tiles_heights[var12][var10][var8];
+                                    var17 = Tiles.Tiles_heights[x][var10][var8];
                                     Scene.Scene_addOccluder(var58, 2, var10 * 128, var11 * 128 + 128, var8 * 128, var8 * 128, var16, var17);
 
-                                    for (var18 = var12; var18 <= var13; ++var18) {
+                                    for (y = x; y <= var13; ++y) {
                                        for (var19 = var10; var19 <= var11; ++var19) {
-                                          var63 = Tiles.field910[var18][var19];
+                                          var63 = Tiles.field910[y][var19];
                                           var63[var8] &= ~var21;
                                        }
                                     }
@@ -2096,9 +2096,9 @@ public final class Client extends GameShell implements Usernamed {
                               if ((Tiles.field910[var59][var9][var8] & var57) != 0) {
                                  var10 = var9;
                                  var11 = var9;
-                                 var12 = var8;
+                                 x = var8;
 
-                                 for (var13 = var8; var12 > 0 && (Tiles.field910[var59][var9][var12 - 1] & var57) != 0; --var12) {
+                                 for (var13 = var8; x > 0 && (Tiles.field910[var59][var9][x - 1] & var57) != 0; --x) {
                                  }
 
                                  while (var13 < 104 && (Tiles.field910[var59][var9][var13 + 1] & var57) != 0) {
@@ -2107,7 +2107,7 @@ public final class Client extends GameShell implements Usernamed {
 
                                  label755:
                                  while (var10 > 0) {
-                                    for (var14 = var12; var14 <= var13; ++var14) {
+                                    for (var14 = x; var14 <= var13; ++var14) {
                                        if ((Tiles.field910[var59][var10 - 1][var14] & var57) == 0) {
                                           break label755;
                                        }
@@ -2118,7 +2118,7 @@ public final class Client extends GameShell implements Usernamed {
 
                                  label744:
                                  while (var11 < 104) {
-                                    for (var14 = var12; var14 <= var13; ++var14) {
+                                    for (var14 = x; var14 <= var13; ++var14) {
                                        if ((Tiles.field910[var59][var11 + 1][var14] & var57) == 0) {
                                           break label744;
                                        }
@@ -2127,12 +2127,12 @@ public final class Client extends GameShell implements Usernamed {
                                     ++var11;
                                  }
 
-                                 if ((var13 - var12 + 1) * (var11 - var10 + 1) >= 4) {
-                                    var14 = Tiles.Tiles_heights[var59][var10][var12];
-                                    Scene.Scene_addOccluder(var58, 4, var10 * 128, var11 * 128 + 128, var12 * 128, var13 * 128 + 128, var14, var14);
+                                 if ((var13 - x + 1) * (var11 - var10 + 1) >= 4) {
+                                    var14 = Tiles.Tiles_heights[var59][var10][x];
+                                    Scene.Scene_addOccluder(var58, 4, var10 * 128, var11 * 128 + 128, x * 128, var13 * 128 + 128, var14, var14);
 
                                     for (var15 = var10; var15 <= var11; ++var15) {
-                                       for (var16 = var12; var16 <= var13; ++var16) {
+                                       for (var16 = x; var16 <= var13; ++var16) {
                                           var63 = Tiles.field910[var59][var15];
                                           var63[var16] &= ~var57;
                                        }
@@ -2145,13 +2145,13 @@ public final class Client extends GameShell implements Usernamed {
                   }
 
                   UserComparator10.method3352(true);
-                  var6 = Tiles.Tiles_minPlane;
-                  if (var6 > SoundSystem.plane) {
-                     var6 = SoundSystem.plane;
+                  z = Tiles.Tiles_minPlane;
+                  if (z > SoundSystem.plane) {
+                     z = SoundSystem.plane;
                   }
 
-                  if (var6 < SoundSystem.plane - 1) {
-                     var6 = SoundSystem.plane - 1;
+                  if (z < SoundSystem.plane - 1) {
+                     z = SoundSystem.plane - 1;
                   }
 
                   if (isLowDetail) {

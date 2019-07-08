@@ -115,13 +115,13 @@ public final class WorldMapRectangle
       signature = "(Lho;IIII)V",
       garbageValue = "1417616898"
    )
-   static final void method296(Widget var0, int var1, int var2, int var3) {
-      SpriteMask var4 = var0.getSpriteMask(false);
+   static final void method296(Widget widget, int x, int y, int var3) {
+      SpriteMask var4 = widget.getSpriteMask(false);
       if (var4 != null) {
          if (Client.minimapState < 3) {
-            GrandExchangeOfferUnitPriceComparator.compass.method315(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var4.xStarts, var4.xWidths);
+            GrandExchangeOfferUnitPriceComparator.compass.drawRotatedAndAlphaMapped(x, y, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var4.xStarts, var4.xWidths);
          } else {
-            Rasterizer2D.method5948(var1, var2, 0, var4.xStarts, var4.xWidths);
+            Rasterizer2D.method5948(x, y, 0, var4.xStarts, var4.xWidths);
          }
       }
 

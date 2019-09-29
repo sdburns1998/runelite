@@ -1,4 +1,4 @@
-name: OpenOSRS - CI
+name: OpenOSRS - CI test
 
 on: [pull_request, push]
 

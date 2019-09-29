@@ -14,4 +14,4 @@ jobs:
         if: github.event.action == 'opened'
         uses: technote-space/assign-author@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.OpenOSRS }}

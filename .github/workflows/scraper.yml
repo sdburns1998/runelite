@@ -1,4 +1,4 @@
-name: OpenOSRS - Scraper
+name: OpenOSRS - Scraper test
 
 on:
   schedule:

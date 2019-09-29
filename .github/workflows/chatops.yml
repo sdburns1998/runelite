@@ -1,0 +1,29 @@
+name: OpenOSRS - ChatOps
+
+on:
+  issue_comment:
+    types: created
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: listen for PR comments
+        id: prcomm
+        uses: machine-learning-apps/actions-chatops@master
+        with:
+          TRIGGER_PHRASE: "/label"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Permission check
+        uses: lannonbr/repo-permission-check-action@master
+        with:
+          permission: "write"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Label PR
+        if: steps.prcomm.outputs.TRIGGERED == 'true'
+        uses: actions/labeler@master
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"

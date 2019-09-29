@@ -1,4 +1,4 @@
-description = 'Cache Updater'
+description = 'Cache Updater test'
 
 dependencies {
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombok

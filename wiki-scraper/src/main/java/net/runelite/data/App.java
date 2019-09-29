@@ -1,5 +1,5 @@
 /*
- * MIT License
+ * MIT License - testing
  *
  * Copyright (c) 2018 Tomas Slusny
  *

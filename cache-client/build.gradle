@@ -1,4 +1,4 @@
-description = 'Cache Client'
+description = 'Cache Client test'
 
 dependencies {
     api project(':cache')
